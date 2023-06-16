@@ -11,10 +11,15 @@
             <div class="alert alert-warning mt-2">
                 <h3>{{ el.title }}</h3>
                 <p>{{ el.task }}</p>
-                <form method="post" action="{% url 'delete' el.id %}">
-                  {% csrf_token %}
-                  <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
+                <div class="button-group">
+                    <form method="post" action="{% url 'delete' el.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <form method="get" action="{% url 'task-detail' el.id %}">
+                        <button type="submit" class="btn btn-info">Open</button>
+                    </form>
+                </div>
             </div>
             {% endfor %}
     {% else %}
