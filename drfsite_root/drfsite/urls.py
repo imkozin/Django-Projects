@@ -27,6 +27,7 @@ from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/drf-auth/', include('rest_framework.urls')),
     # path('api/v1/', include(router.urls)), 
     # http://127.0.0.1:8000/api/v1/women/
     # path('api/v1/womenlist/', WomenViewSet.as_view({'get':'list'})),
